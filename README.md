@@ -1,6 +1,6 @@
 Please find below the instructions to use Postman with QEM APIs:
 
-1 - Download and install Postman from:
+###1 - ###Download and install Postman from:
 https://www.getpostman.com/
 
 2 - Once the app is installed and running, go to File and click on Import:
@@ -12,14 +12,14 @@ Import both files attached to the repository.
 
 5 – Edit all the variables as the instructions below (the names are case sensitive)
 
-session_id: you do not have to edit this one, it will generate an ID once you execute the QEM Login
-aem_server: your QEM Server (IP address or DNS Name)
-replicate_server: The name of your Replicate Server configured in QEM
-endpoint_source: A Source Endpoint that is already configure in the Replicate Server mentioned above
-endpoint_target: A Target Endpoint that is already configure in the Replicate Server mentioned above
-task_name: A task name that is already configured in your Replicate Server
-schema_name: In order to reload a table, use a schema name that is part of the task above
-table_name: In order to reload a table, use a table name that is part of the task and schema above
+session_id: you do not have to edit this one, it will generate an ID once you execute the QEM Login<BR>
+aem_server: your QEM Server (IP address or DNS Name)<BR>
+replicate_server: The name of your Replicate Server configured in QEM<BR>
+endpoint_source: A Source Endpoint that is already configure in the Replicate Server mentioned above<BR>
+endpoint_target: A Target Endpoint that is already configure in the Replicate Server mentioned above<BR>
+task_name: A task name that is already configured in your Replicate Server<BR>
+schema_name: In order to reload a table, use a schema name that is part of the task above<BR>
+table_name: In order to reload a table, use a table name that is part of the task and schema above<BR>
 
 8 – Click on Save and close the next window
 
