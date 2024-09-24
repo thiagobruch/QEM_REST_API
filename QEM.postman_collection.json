@@ -1,0 +1,1171 @@
+{
+	"info": {
+		"_postman_id": "68ef5104-f9ad-460d-8acd-b5948f4eb6d3",
+		"name": "QEM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1856471"
+	},
+	"item": [
+		{
+			"name": "Server",
+			"item": [
+				{
+					"name": "Patch Endpoint",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n{ \"op\":\"replace\", \"path\":\"/db_settings/secretKey\",\r\n\"value\":\"Ae07ddykDyWE98Narv7qCdE459W2iFJCW2TB3A5k\" }\r\n]"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints/AWS_Kinesis_Doug",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints",
+								"AWS_Kinesis_Doug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servers List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Endpoint (Source)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints/{{endpoint_source}}/?action=test",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints",
+								"{{endpoint_source}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints/SQLServer_Target_New?action=delete",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints",
+								"SQLServer_Target_New"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "delete"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Endpoint (Target)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints/{{endpoint_target}}/?action=test\n",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints",
+								"{{endpoint_target}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "test\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Server ACL",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YnJ1Y2gtYWVtXGFkbWluaXN0cmF0b3I6dGVzdGluZw=="
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}?action=acl",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "acl"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEnpoints",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import - Create New Endpoints",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "1452",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Replication_Definition\",\r\n  \"cmd.replication_definition\": {\r\n    \"databases\": [\r\n      {\r\n        \"name\": \"SQLServer_Source_New\",\r\n        \"role\": \"SOURCE\",\r\n        \"is_licensed\": true,\r\n        \"type_id\": \"SQL_SERVER_COMPONENT_TYPE\",\r\n        \"db_settings\": {\r\n          \"$type\": \"SqlserverSettings\",\r\n          \"username\": \"sa\",\r\n          \"password\": \"{ZA7C1305916F48B9ADDD46A569169BEBC8B97F91E5838B3258}\",\r\n          \"server\": \"localhost\",\r\n          \"database\": \"Demo\",\r\n          \"useWindowsAuthentication\": false,\r\n          \"safeguardPolicy\": \"RELY_ON_SQL_SERVER_REPLICATION_AGENT\"\r\n        },\r\n        \"override_properties\": {}\r\n      },\r\n      {\r\n        \"name\": \"SQLServer_Target_New\",\r\n        \"role\": \"TARGET\",\r\n        \"is_licensed\": true,\r\n        \"type_id\": \"SQL_SERVER_COMPONENT_TYPE\",\r\n        \"db_settings\": {\r\n          \"$type\": \"SqlserverSettings\",\r\n          \"username\": \"sa\",\r\n          \"password\": \"{ZAEFECD32B3AED480F5849FF8C4C9D7D31A701F598262EC2B4}\",\r\n          \"server\": \"localhost\",\r\n          \"database\": \"DWH\",\r\n          \"useWindowsAuthentication\": false,\r\n          \"safeguardPolicy\": \"RELY_ON_SQL_SERVER_REPLICATION_AGENT\"\r\n        },\r\n        \"override_properties\": {}\r\n      }\r\n    ]\r\n  },\r\n  \"_version\": {\r\n    \"version\": \"6.6.0.177\",\r\n    \"version_major\": 6,\r\n    \"version_minor\": 6,\r\n    \"version_revision\": 177\r\n  },\r\n  \"description\": \"Host name: demo-sql2014, Time: 2020-05-11 15:25:12.019770\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}?action=import",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "import"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import All",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Replication_Definition\",\r\n  \"cmd.replication_definition\": {\r\n    \"databases\": [\r\n      {\r\n        \"name\": \"SQLServer_API_Import\",\r\n        \"role\": \"SOURCE\",\r\n        \"is_licensed\": true,\r\n        \"type_id\": \"SQL_SERVER_COMPONENT_TYPE\",\r\n        \"db_settings\": {\r\n          \"$type\": \"SqlserverSettings\",\r\n          \"username\": \"sa\",\r\n          \"password\": \"testing\",\r\n          \"server\": \"localhost\",\r\n          \"database\": \"Demo\",\r\n          \"useWindowsAuthentication\": false,\r\n          \"safeguardPolicy\": \"RELY_ON_SQL_SERVER_REPLICATION_AGENT\"\r\n        },\r\n        \"override_properties\": {}\r\n      },\r\n      {\r\n        \"name\": \"SQLServer_API_Import\",\r\n        \"role\": \"TARGET\",\r\n        \"is_licensed\": true,\r\n        \"type_id\": \"SQL_SERVER_COMPONENT_TYPE\",\r\n        \"db_settings\": {\r\n          \"$type\": \"SqlserverSettings\",\r\n          \"username\": \"sa\",\r\n          \"password\": \"testing\",\r\n          \"server\": \"localhost\",\r\n          \"database\": \"DWH\",\r\n          \"useWindowsAuthentication\": false,\r\n          \"safeguardPolicy\": \"RELY_ON_SQL_SERVER_REPLICATION_AGENT\"\r\n        },\r\n        \"override_properties\": {}\r\n      }\r\n    ]\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}?action=import",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "import"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QEM Put Server",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"$type\": \"AemReplicateServer\",\r\n\"name\": \"Thiago_linux_server\",\r\n\"description\": \"description of my server\",\r\n\"host\": \"10.1.51.119\",\r\n\"port\": \"3552\",\r\n\"username\": \"admin\",\r\n\"password\": \"testing\",\r\n\"monitored\": true\r\n}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{new_server}}/def",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{new_server}}",
+								"def"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QEM Get Server Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Audit Trail",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');\r",
+									"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));\r",
+									"pm.environment.set('currenttime', moment().subtract(6, 'hours' ).format((\"HH:mm:ss\")));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/security/audit_trail?start_timestamp={{currentdate}}T{{currenttime}}Z",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"security",
+								"audit_trail"
+							],
+							"query": [
+								{
+									"key": "start_timestamp",
+									"value": "{{currentdate}}T{{currenttime}}Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch SQL Server Source",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n   {\r\n      \"op\":\"replace\",\r\n      \"path\":\"/db_settings/DO.SqlserverSettings.password\",\r\n      \"value\":\"testing\"\r\n   }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints/{{endpoint_patch}}",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints",
+								"{{endpoint_patch}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch MySQL Source",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n   {\r\n      \"op\":\"replace\",\r\n      \"path\":\"/db_settings/DO.SqlserverSettings.password\",\r\n      \"value\":\"testing\"\r\n   }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/endpoints/{{endpoint_patch}}",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"endpoints",
+								"{{endpoint_patch}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Task Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task/Table Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/tables?action=getstatus&schema=HR&table=EMPLOYEES",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								"tables"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "getstatus"
+								},
+								{
+									"key": "schema",
+									"value": "HR"
+								},
+								{
+									"key": "table",
+									"value": "EMPLOYEES"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}//?action=export&withendpoints=false",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								"",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "export"
+								},
+								{
+									"key": "withendpoints",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "18"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/?action=run&option=RESUME_PROCESSING",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "run"
+								},
+								{
+									"key": "option",
+									"value": "RESUME_PROCESSING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Task Compose",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "18"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/Compose SRV - C4DW/tasks/Northwind_CDC/?action=run&option=RELOAD_TARGET",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"Compose SRV - C4DW",
+								"tasks",
+								"Northwind_CDC",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "run"
+								},
+								{
+									"key": "option",
+									"value": "RELOAD_TARGET"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Task From Timestamp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "18"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"2019-08-12T14:19:03\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/?action=run&option=RESUME_PROCESSING_FROM_TIMESTAMP",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "run"
+								},
+								{
+									"key": "option",
+									"value": "RESUME_PROCESSING_FROM_TIMESTAMP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reload Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "18"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YnJ1Y2gtYWVtXGFkbWluaXN0cmF0b3I6dGVzdGluZw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/?action=run&option=RELOAD_TARGET",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "run"
+								},
+								{
+									"key": "option",
+									"value": "RELOAD_TARGET"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resume Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/?action=run&option=RESUME_PROCESSING",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "run"
+								},
+								{
+									"key": "option",
+									"value": "RESUME_PROCESSING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resume Task From TimeStamp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"2021-03-16T14:11:14\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/?action=run&option=RESUME_PROCESSING_FROM_TIMESTAMP",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "run"
+								},
+								{
+									"key": "option",
+									"value": "RESUME_PROCESSING_FROM_TIMESTAMP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reload Table",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/tables/?action=reload&schema={{schema_name}}&table={{table_name}}",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								"tables",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "reload"
+								},
+								{
+									"key": "schema",
+									"value": "{{schema_name}}"
+								},
+								{
+									"key": "table",
+									"value": "{{table_name}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							},
+							{
+								"key": "Content-Length",
+								"value": "18"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cdcposition\":\"\"}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name}}/?action=stop",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "stop"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "EnterpriseManager.APISessionID",
+								"value": "{{session_id}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\":\t\"Oracle to SQL Demo_2__2020-02-05--10-29-34-152328\",\r\n\t\"cmd.replication_definition\":\t{\r\n\t\t\"tasks\":\t[{\r\n\t\t\t\t\"task\":\t{\r\n\t\t\t\t\t\"name\":\t\"Oracle to SQL Imported\",\r\n\t\t\t\t\t\"source_name\":\t\"Oracle Source\",\r\n\t\t\t\t\t\"target_names\":\t[\"SQL Target HR Demo\"]\r\n\t\t\t\t},\r\n\t\t\t\t\"source\":\t{\r\n\t\t\t\t\t\"rep_source\":\t{\r\n\t\t\t\t\t\t\"source_name\":\t\"Oracle Source\",\r\n\t\t\t\t\t\t\"database_name\":\t\"Oracle Source\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"source_tables\":\t{\r\n\t\t\t\t\t\t\"name\":\t\"Oracle Source\",\r\n\t\t\t\t\t\t\"included_pattern\":\t[{\r\n\t\t\t\t\t\t\t\t\"owner\":\t\"HR\",\r\n\t\t\t\t\t\t\t\t\"name\":\t\"NEW%\"\r\n\t\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"explicit_included_tables\":\t[{\r\n\t\t\t\t\t\t\t\t\"owner\":\t\"HR\",\r\n\t\t\t\t\t\t\t\t\"name\":\t\"COUNTRIES\",\r\n\t\t\t\t\t\t\t\t\"estimated_size\":\t28,\r\n\t\t\t\t\t\t\t\t\"orig_db_id\":\t16393,\r\n\t\t\t\t\t\t\t\t\"validation_sampling_percentage\":\t0\r\n\t\t\t\t\t\t\t}, {\r\n\t\t\t\t\t\t\t\t\"owner\":\t\"HR\",\r\n\t\t\t\t\t\t\t\t\"name\":\t\"DEPARTMENTS\",\r\n\t\t\t\t\t\t\t\t\"estimated_size\":\t28,\r\n\t\t\t\t\t\t\t\t\"orig_db_id\":\t16398,\r\n\t\t\t\t\t\t\t\t\"validation_sampling_percentage\":\t0\r\n\t\t\t\t\t\t\t}, {\r\n\t\t\t\t\t\t\t\t\"owner\":\t\"HR\",\r\n\t\t\t\t\t\t\t\t\"name\":\t\"EMPLOYEES\",\r\n\t\t\t\t\t\t\t\t\"estimated_size\":\t127,\r\n\t\t\t\t\t\t\t\t\"orig_db_id\":\t16403,\r\n\t\t\t\t\t\t\t\t\"validation_sampling_percentage\":\t0\r\n\t\t\t\t\t\t\t}, {\r\n\t\t\t\t\t\t\t\t\"owner\":\t\"HR\",\r\n\t\t\t\t\t\t\t\t\"name\":\t\"REGIONS\",\r\n\t\t\t\t\t\t\t\t\"estimated_size\":\t9,\r\n\t\t\t\t\t\t\t\t\"orig_db_id\":\t16391,\r\n\t\t\t\t\t\t\t\t\"validation_sampling_percentage\":\t0\r\n\t\t\t\t\t\t\t}]\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\t\"targets\":\t[{\r\n\t\t\t\t\t\t\"rep_target\":\t{\r\n\t\t\t\t\t\t\t\"target_name\":\t\"SQL Target HR Demo\",\r\n\t\t\t\t\t\t\t\"target_state\":\t\"DISABLED\",\r\n\t\t\t\t\t\t\t\"database_name\":\t\"SQL Target HR Demo\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}],\r\n\t\t\t\t\"task_settings\":\t{\r\n\t\t\t\t\t\"source_settings\":\t{\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"target_settings\":\t{\r\n\t\t\t\t\t\t\"queue_settings\":\t{\r\n\t\t\t\t\t\t\t\"message_shape\":\t{\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"key_shape\":\t{\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"ftm_settings\":\t{\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"sorter_settings\":\t{\r\n\t\t\t\t\t\t\"local_transactions_storage\":\t{\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"common_settings\":\t{\r\n\t\t\t\t\t\t\"change_table_settings\":\t{\r\n\t\t\t\t\t\t\t\"header_columns_settings\":\t{\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"audit_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"save_changes_enabled\":\ttrue,\r\n\t\t\t\t\t\t\"dr_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"statistics_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"bidi_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"task_uuid\":\t\"497039b1-c203-7b49-af83-19d397513f15\",\r\n\t\t\t\t\t\t\"status_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"suspended_tables_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"history_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"exception_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"recovery_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"data_batching_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"data_batching_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"log_stream_settings_depricated\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"ddl_history_table_settings\":\t{\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"customized_charset_settings\":\t{\r\n\t\t\t\t\t\t\t\"validation\":\t{\r\n\t\t\t\t\t\t\t\t\"sub_char\":\t0\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}],\r\n\t\t\"databases\":\t[{\r\n\t\t\t\t\"name\":\t\"Oracle Source\",\r\n\t\t\t\t\"role\":\t\"SOURCE\",\r\n\t\t\t\t\"is_licensed\":\ttrue,\r\n\t\t\t\t\"type_id\":\t\"ORACLE_COMPONENT_TYPE\",\r\n\t\t\t\t\"db_settings\":\t{\r\n\t\t\t\t\t\"$type\":\t\"OracleSettings\",\r\n\t\t\t\t\t\"username\":\t\"hr\",\r\n\t\t\t\t\t\"password\":\t\"{ZA1CC69997BC4CDC1FC900D961F02B3BAABCB79548F290A0F6}\",\r\n\t\t\t\t\t\"server\":\t\"10.1.51.245\",\r\n\t\t\t\t\t\"accessAlternateDirectly\":\tfalse,\r\n\t\t\t\t\t\"useAlternateFolderForOnline\":\ttrue,\r\n\t\t\t\t\t\"oraclePathPrefix\":\t\"+DATA01/\",\r\n\t\t\t\t\t\"usePathPrefix\":\t\"/oraclebakups1/attunity/\",\r\n\t\t\t\t\t\"supportResetLog\":\tfalse,\r\n\t\t\t\t\t\"useGlobalTransactions\":\tfalse\r\n\t\t\t\t},\r\n\t\t\t\t\"override_properties\":\t{\r\n\t\t\t\t}\r\n\t\t\t}, {\r\n\t\t\t\t\"name\":\t\"SQL Target HR Demo\",\r\n\t\t\t\t\"role\":\t\"TARGET\",\r\n\t\t\t\t\"is_licensed\":\ttrue,\r\n\t\t\t\t\"type_id\":\t\"SQL_SERVER_COMPONENT_TYPE\",\r\n\t\t\t\t\"db_settings\":\t{\r\n\t\t\t\t\t\"$type\":\t\"SqlserverSettings\",\r\n\t\t\t\t\t\"server\":\t\"bruch-replicate\",\r\n\t\t\t\t\t\"database\":\t\"HR_Replicated_Demo\",\r\n\t\t\t\t\t\"safeguardPolicy\":\t\"RELY_ON_SQL_SERVER_REPLICATION_AGENT\"\r\n\t\t\t\t},\r\n\t\t\t\t\"override_properties\":\t{\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t},\r\n\t\"_version\":\t{\r\n\t\t\"version\":\t\"6.5.0.529\",\r\n\t\t\"version_major\":\t6,\r\n\t\t\"version_minor\":\t5,\r\n\t\t\"version_revision\":\t529\r\n\t},\r\n\t\"description\":\t\"Host name: Bruch-Replicate, Time: 2020-02-05 10:29:34.152328\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/servers/{{replicate_server}}/tasks/{{task_name_import}}/?action=import",
+							"protocol": "https",
+							"host": [
+								"{{aem_server}}"
+							],
+							"path": [
+								"attunityenterprisemanager",
+								"api",
+								"v1",
+								"servers",
+								"{{replicate_server}}",
+								"tasks",
+								"{{task_name_import}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "import"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QEM Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = responseHeaders;\r",
+							"postman.setEnvironmentVariable(\"session_id\", data['EnterpriseManager.APISessionID']);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{my_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bruch-qem\\administrator",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YnJ1Y2gtYWVtXGFkbWluaXN0cmF0b3I6dGVzdGluZw=="
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://{{aem_server}}/attunityenterprisemanager/api/v1/login",
+					"protocol": "https",
+					"host": [
+						"{{aem_server}}"
+					],
+					"path": [
+						"attunityenterprisemanager",
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
