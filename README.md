@@ -31,11 +31,11 @@ bruch-qem\administrator (where bruch-qem is the server name or domain nname and 
 <b>11 – </b>Click on Save and Send.
 You should have a response similar to the example below:
 
-Content-Length →0
-Content-Type →text/html
-Date →Thu, 06 Apr 2022 19:34:55 GMT
-EnterpriseManager.APISessionID →yUgwAp80FFtdq2R5E_YxQg
-Server →Microsoft-HTTPAPI/2.0
+Content-Length →0<BR>
+Content-Type →text/html<BR>
+Date →Thu, 06 Apr 2022 19:34:55 GMT<BR>
+EnterpriseManager.APISessionID →yUgwAp80FFtdq2R5E_YxQg<BR>
+Server →Microsoft-HTTPAPI/2.0<BR>
 
 <b>12 – </b>The QEM Login, has to be executed every time the Postman program is opened.
 This will get the ID for that session and store for 5 minutes.
