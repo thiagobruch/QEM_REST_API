@@ -4,10 +4,10 @@ Please find below the instructions to use Postman with QEM APIs:
 https://www.getpostman.com/
 
 2 - Once the app is installed and running, go to File and click on Import:
- 
-Import both files attached to the email.
+Import both files attached to the repository.
 
 3 – On the Top Right of the screen, click on the drop down next to “No Environment” and select QEM
+
 4 – Click on the eye symbol   and under QEM click on Edit
 
 5 – Edit all the variables as the instructions below (the names are case sensitive)
@@ -26,7 +26,7 @@ table_name: In order to reload a table, use a table name that is part of the tas
 9 – Go to File, Settings and under General, turn off “SSL Certificate Verification” and close the window.
 
 10 – Go to Collections, click on the QEM Login. Under Authorization, select Basic Auth and type the username and password as the example below:
-bruch-qem\administrator (where bruch-qem is the server name and administrator is the username)
+bruch-qem\administrator (where bruch-qem is the server name or domain nname and administrator is the username)
 
 11 – Click on Save and Send.
 You should have a response similar to the example below:
@@ -41,4 +41,5 @@ Server →Microsoft-HTTPAPI/2.0
 This will get the ID for that session and store for 5 minutes.
 
 All the other commands can be execute and the result can be found under “body”.
+
 To run each command click on the command under Collections and click on Send.
