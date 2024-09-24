@@ -1,6 +1,6 @@
 Please find below the instructions to use Postman with QEM APIs:
 
-###1 - ###Download and install Postman from:
+<b>1 - </b>Download and install Postman from:
 https://www.getpostman.com/
 
 2 - Once the app is installed and running, go to File and click on Import:
